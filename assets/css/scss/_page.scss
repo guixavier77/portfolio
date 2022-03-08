@@ -1,0 +1,355 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Ubuntu&family=Work+Sans:wght@300;600;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: #353543;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+.container {
+  max-width: $desktop;
+  margin: 0 auto;
+  @include device(tablet) {
+    max-width: $tablet;
+  }
+  @include device(smartphone) {
+    max-width: $smartphone;
+  }
+}
+
+.secao-titulo {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  @include type-font(48);
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  &::after {
+    content: "";
+    display: block;
+    width: 160px;
+    height: 3px;
+    margin: 10px auto 10px auto;
+    background: $color-primary;
+  }
+}
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  padding: 20px 0;
+  @include type-font(18);
+  .menu {
+    .menu-lista {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      li a {
+        color: #d1d1db;
+      }
+    }
+
+    li:first-child a {
+      font-weight: 700;
+      color: #ebebeb;
+    }
+  }
+  .contatos {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 30px;
+    .circle {
+      display: flex;
+      background: #48485b;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+
+.introducao {
+  display: grid;
+  grid-template-areas: "apresentacao foto-principal";
+  grid-template-columns: 1fr 1.5fr;
+  padding-bottom: 60px;
+  @include device(smartphone) {
+    grid-template-columns: 1fr;
+  }
+  .apresentacao {
+    grid-area: apresentacao;
+    h2 {
+      @include type-font(48);
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      color: #9b9bb1;
+      padding-top: 80px;
+      @include device(tablet) {
+        @include type-font(36);
+      }
+    }
+
+    h1 {
+      font-family: "Montserrat", sans-serif;
+      @include type-font(72);
+      color: #fff;
+      padding: 20px 0 24px 0;
+      &::after {
+        content: "";
+        display: block;
+        width: 200px;
+        border: 2px solid $color-primary;
+        margin-top: 10px;
+      }
+      @include device(tablet) {
+        @include type-font(48);
+      }
+    }
+
+    p.descricao {
+      @include type-font(18);
+      color: #d1d1db;
+      font-family: "Work Sans", sans-serif;
+      font-weight: 400;
+      padding-bottom: 55px;
+      @include device(tablet) {
+        font-size: 16px;
+      }
+    }
+    .btn-download {
+      border: 1px solid $color-primary;
+      border-radius: 100px;
+      padding: 20px 32px;
+      color: $color-primary;
+      font-family: "Ubuntu", sans-serif;
+      @include device(tablet) {
+        padding: 10px 16px;
+      }
+      @include type-font(18);
+      .download-icon {
+        display: inline-block;
+        background: url(../img/icons/download-icon.svg) no-repeat center;
+        height: 15px;
+        width: 24px;
+        padding-right: 10px;
+      }
+    }
+  }
+  .foto-principal {
+    display: flex;
+    grid-area: foto-principal;
+    padding-top: 40px;
+    justify-content: flex-end;
+    img {
+      @include device(tablet) {
+        // width: 400px;
+        // height: 400px;
+        padding-top: 30px;
+      }
+    }
+  }
+}
+
+.skills-bg {
+  background: #282833;
+
+  .skills {
+    padding: 60px 0;
+
+    .cards-skills {
+      padding-top: 60px;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      .card {
+        width: 330px;
+        height: 330px;
+        padding: 30px 20px;
+        background: #3f3f50;
+
+        border-radius: 4px;
+        h3 {
+          font-family: Montserrat;
+          font-weight: 600;
+          color: #ebebeb;
+          @include type-font(24);
+          padding: 20px 0 12px 0;
+        }
+
+        p {
+          font-family: "Work Sans", sans-serif;
+          @include type-font(18);
+          color: #d1d1db;
+        }
+
+        .circle {
+          background: #353543;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  .card-tecnologias {
+    padding-top: 40px;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+    @include device(tablet) {
+      display: grid;
+      grid-template-columns: 100px 100px 100px;
+      gap: 30px;
+      justify-items: center;
+    }
+    .card-tec {
+      background: #3f3f50;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+  }
+}
+
+.projetos {
+  padding: 60px 0;
+  .cards-projetos {
+    padding-top: 60px;
+    display: flex;
+    gap: 140px;
+    justify-content: center;
+    flex-wrap: wrap;
+    @include device(tablet) {
+      gap: 20px;
+    }
+    .card-proj {
+      display: flex;
+      flex-direction: column;
+      border-radius: 8px;
+      padding: 30px 45px;
+      width: 500px;
+      height: 460px;
+      background: #282833;
+
+      h3 {
+        font-family: "Montserrat", sans-serif;
+        @include type-font(28);
+        font-weight: 600;
+        color: #ebebeb;
+        text-align: start;
+        padding: 20px 0;
+        text-transform: uppercase;
+      }
+      p {
+        font-family: "Work Sans", sans-serif;
+        @include type-font(18);
+        color: #d1d1db;
+        padding-bottom: 20px;
+      }
+      .btns {
+        display: flex;
+        gap: 25px;
+
+        .btn {
+          padding: 10px 40px;
+          border-radius: 4px;
+          font-weight: 600;
+          font-family: "Work sans", sans-serif;
+          text-transform: uppercase;
+        }
+        .demo {
+          background: $color-primary;
+          color: #0e091b;
+        }
+        .git {
+          border: 1px solid $color-primary;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.contatos-bg {
+  background: #282833;
+  padding-top: 60px;
+  .cards-contato {
+    display: flex;
+    justify-content: center;
+    padding: 60px 0;
+    gap: 40px;
+    flex-wrap: wrap;
+    @include device(tablet) {
+      display: grid;
+      grid-template-columns: 220px 220px;
+    }
+    .card-cont {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: #3f3f50;
+      padding: 30px;
+
+      font-family: "Work Sans", sans-serif;
+      width: 220px;
+      height: 166px;
+      border-radius: 4px;
+      img {
+        width: 32px;
+        height: 32px;
+      }
+      h3 {
+        color: #ebebeb;
+        padding: 12px 0;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+      p {
+        font-size: 0.875em;
+        color: #d1d1db;
+      }
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #5e5e78;
+  padding: 20px 10px;
+  margin-top: 40px;
+  p {
+    color: #fff;
+    font-size: 20px;
+    font-family: "Work Sans", sans-serif;
+  }
+}
