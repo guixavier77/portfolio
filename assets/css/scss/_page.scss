@@ -63,6 +63,9 @@ img {
       font-weight: 700;
       color: #ebebeb;
     }
+    @include device(smartphone) {
+      display: none;
+    }
   }
   .contatos {
     display: flex;
@@ -82,6 +85,9 @@ img {
         height: 24px;
       }
     }
+    @include device(smartphone) {
+      display: none;
+    }
   }
 }
 
@@ -91,6 +97,9 @@ img {
   grid-template-columns: 1fr 1.5fr;
   padding-bottom: 60px;
   @include device(smartphone) {
+    grid-template-areas:
+      "apresentacao"
+      "foto-principal";
     grid-template-columns: 1fr;
   }
   .apresentacao {
@@ -103,6 +112,9 @@ img {
       padding-top: 80px;
       @include device(tablet) {
         @include type-font(36);
+      }
+      @include device(smartphone) {
+        padding-top: 30px;
       }
     }
 
@@ -157,10 +169,11 @@ img {
     grid-area: foto-principal;
     padding-top: 40px;
     justify-content: flex-end;
+
     img {
       @include device(tablet) {
-        // width: 400px;
-        // height: 400px;
+        width: 400px;
+        height: 400px;
         padding-top: 30px;
       }
     }
@@ -243,11 +256,11 @@ img {
   .cards-projetos {
     padding-top: 60px;
     display: flex;
-    gap: 140px;
+    gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
-    @include device(tablet) {
-      gap: 20px;
+    @include device($desktop) {
+      gap: 140px;
     }
     .card-proj {
       display: flex;
@@ -317,7 +330,6 @@ img {
       flex-direction: column;
       background: #3f3f50;
       padding: 30px;
-
       font-family: "Work Sans", sans-serif;
       width: 220px;
       height: 166px;
@@ -347,9 +359,16 @@ img {
   border-top: 1px solid #5e5e78;
   padding: 20px 10px;
   margin-top: 40px;
+  @include device(smartphone) {
+    flex-direction: column;
+  }
   p {
     color: #fff;
     font-size: 20px;
     font-family: "Work Sans", sans-serif;
+    @include device(smartphone) {
+      font-size: 1em;
+      margin-top: 10px;
+    }
   }
 }

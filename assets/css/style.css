@@ -447,6 +447,12 @@ img {
   color: #ebebeb;
 }
 
+@media screen and (max-width: 767px) {
+  .header .menu {
+    display: none;
+  }
+}
+
 .header .contatos {
   display: flex;
   flex-wrap: wrap;
@@ -468,6 +474,12 @@ img {
   height: 24px;
 }
 
+@media screen and (max-width: 767px) {
+  .header .contatos {
+    display: none;
+  }
+}
+
 .introducao {
   display: grid;
   grid-template-areas: "apresentacao foto-principal";
@@ -477,6 +489,7 @@ img {
 
 @media screen and (max-width: 767px) {
   .introducao {
+    grid-template-areas: "apresentacao" "foto-principal";
     grid-template-columns: 1fr;
   }
 }
@@ -498,6 +511,12 @@ img {
   .introducao .apresentacao h2 {
     font-size: 2.25em;
     line-height: 0.83333em;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .introducao .apresentacao h2 {
+    padding-top: 30px;
   }
 }
 
@@ -564,7 +583,7 @@ img {
 }
 
 .introducao .foto-principal {
-  display: grid;
+  display: flex;
   grid-area: foto-principal;
   padding-top: 40px;
   justify-content: flex-end;
@@ -663,15 +682,9 @@ img {
 .projetos .cards-projetos {
   padding-top: 60px;
   display: flex;
-  gap: 140px;
+  gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
-}
-
-@media screen and (min-width: 768px) and (max-width: 1139px) {
-  .projetos .cards-projetos {
-    gap: 20px;
-  }
 }
 
 .projetos .cards-projetos .card-proj {
@@ -783,8 +796,21 @@ img {
   margin-top: 40px;
 }
 
+@media screen and (max-width: 767px) {
+  .footer {
+    flex-direction: column;
+  }
+}
+
 .footer p {
   color: #fff;
   font-size: 20px;
   font-family: "Work Sans", sans-serif;
+}
+
+@media screen and (max-width: 767px) {
+  .footer p {
+    font-size: 1em;
+    margin-top: 10px;
+  }
 }
