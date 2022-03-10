@@ -398,6 +398,7 @@ img {
 @media screen and (max-width: 767px) {
   .container {
     max-width: 390px;
+    padding: 0 8px;
   }
 }
 
@@ -432,25 +433,50 @@ img {
   line-height: 1.66667em;
 }
 
+@media screen and (max-width: 767px) {
+  .header {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+}
+
+.header .menu #btn-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .header .menu #btn-mobile {
+    display: flex;
+  }
+}
+
 .header .menu .menu-lista {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 30px;
 }
 
 .header .menu .menu-lista li a {
+  display: block;
   color: #d1d1db;
+}
+
+@media screen and (max-width: 767px) {
+  .header .menu .menu-lista {
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 83px;
+    right: 0;
+    background: #282833;
+    height: 100vh;
+    z-index: 1000;
+  }
 }
 
 .header .menu li:first-child a {
   font-weight: 700;
   color: #ebebeb;
-}
-
-@media screen and (max-width: 767px) {
-  .header .menu {
-    display: none;
-  }
 }
 
 .header .contatos {
@@ -480,6 +506,22 @@ img {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .menu.active .menu-lista {
+    display: block;
+  }
+  .menu-lista li a {
+    padding: 1rem 0;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.5em;
+    line-height: 1.25em;
+  }
+  .menu-lista li:first-child {
+    margin-top: 40px;
+  }
+}
+
 .introducao {
   display: grid;
   grid-template-areas: "apresentacao foto-principal";
@@ -499,31 +541,32 @@ img {
 }
 
 .introducao .apresentacao h2 {
-  font-size: 3em;
-  line-height: 0.625em;
+  font-size: 2.25em;
+  line-height: 0.83333em;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   color: #9b9bb1;
   padding-top: 80px;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1139px) {
+@media screen and (min-width: 1140px) {
   .introducao .apresentacao h2 {
-    font-size: 2.25em;
-    line-height: 0.83333em;
+    font-size: 3em;
+    line-height: 0.625em;
   }
 }
 
 @media screen and (max-width: 767px) {
   .introducao .apresentacao h2 {
-    padding-top: 30px;
+    padding-top: 22px;
   }
 }
 
 .introducao .apresentacao h1 {
   font-family: "Montserrat", sans-serif;
-  font-size: 4.5em;
-  font-weight: bold;
+  font-size: 3em;
+  line-height: 0.625em;
+  font-weight: 700;
   color: #fff;
   padding: 20px 0 24px 0;
 }
@@ -534,13 +577,6 @@ img {
   width: 200px;
   border: 2px solid #5683f6;
   margin-top: 10px;
-}
-
-@media screen and (min-width: 768px) and (max-width: 1139px) {
-  .introducao .apresentacao h1 {
-    font-size: 3em;
-    line-height: 0.625em;
-  }
 }
 
 .introducao .apresentacao p.descricao {
@@ -697,6 +733,12 @@ img {
   background: #282833;
 }
 
+@media screen and (max-width: 767px) {
+  .projetos .cards-projetos .card-proj {
+    width: 349px;
+  }
+}
+
 .projetos .cards-projetos .card-proj h3 {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
@@ -719,12 +761,24 @@ img {
   gap: 25px;
 }
 
+@media screen and (max-width: 767px) {
+  .projetos .cards-projetos .card-proj .btns {
+    justify-content: center;
+  }
+}
+
 .projetos .cards-projetos .card-proj .btns .btn {
   padding: 10px 40px;
   border-radius: 4px;
   font-weight: 600;
   font-family: "Work sans", sans-serif;
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 767px) {
+  .projetos .cards-projetos .card-proj .btns .btn {
+    padding: 10px 20px;
+  }
 }
 
 .projetos .cards-projetos .card-proj .btns .demo {

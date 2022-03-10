@@ -21,6 +21,7 @@ img {
   }
   @include device(smartphone) {
     max-width: $smartphone;
+    padding: 0 8px;
   }
 }
 
@@ -49,13 +50,35 @@ img {
   font-weight: 300;
   padding: 20px 0;
   @include type-font(18);
+
+  @include device(smartphone) {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
   .menu {
+    #btn-mobile {
+      display: none;
+      @include device(smartphone) {
+        display: flex;
+      }
+    }
     .menu-lista {
       display: flex;
       flex-wrap: wrap;
-      gap: 40px;
+      gap: 30px;
       li a {
+        display: block;
         color: #d1d1db;
+      }
+      @include device(smartphone) {
+        display: none;
+        position: absolute;
+        width: 100%;
+        top: 83px;
+        right: 0;
+        background: #282833;
+        height: 100vh;
+        z-index: 1000;
       }
     }
 
@@ -63,10 +86,8 @@ img {
       font-weight: 700;
       color: #ebebeb;
     }
-    @include device(smartphone) {
-      display: none;
-    }
   }
+
   .contatos {
     display: flex;
     flex-wrap: wrap;
@@ -91,6 +112,22 @@ img {
   }
 }
 
+@include device(smartphone) {
+  .menu.active .menu-lista {
+    display: block; // certo
+  }
+  .menu-lista li a {
+    padding: 1rem 0;
+    text-align: center;
+    margin-top: 20px;
+    @include type-font(24);
+  }
+
+  .menu-lista li:first-child {
+    margin-top: 40px;
+  }
+}
+
 .introducao {
   display: grid;
   grid-template-areas: "apresentacao foto-principal";
@@ -105,22 +142,24 @@ img {
   .apresentacao {
     grid-area: apresentacao;
     h2 {
-      @include type-font(48);
+      @include type-font(36);
       font-family: "Montserrat", sans-serif;
       font-weight: 400;
       color: #9b9bb1;
       padding-top: 80px;
-      @include device(tablet) {
-        @include type-font(36);
+      @include device(desktop) {
+        @include type-font(48);
       }
+
       @include device(smartphone) {
-        padding-top: 30px;
+        padding-top: 22px;
       }
     }
 
     h1 {
       font-family: "Montserrat", sans-serif;
-      @include type-font(72);
+      @include type-font(48);
+      font-weight: 700;
       color: #fff;
       padding: 20px 0 24px 0;
       &::after {
@@ -130,8 +169,8 @@ img {
         border: 2px solid $color-primary;
         margin-top: 10px;
       }
-      @include device(tablet) {
-        @include type-font(48);
+      @include device($desktop) {
+        @include type-font(72);
       }
     }
 
@@ -270,6 +309,9 @@ img {
       width: 500px;
       height: 460px;
       background: #282833;
+      @include device(smartphone) {
+        width: 349px;
+      }
 
       h3 {
         font-family: "Montserrat", sans-serif;
@@ -289,6 +331,9 @@ img {
       .btns {
         display: flex;
         gap: 25px;
+        @include device(smartphone) {
+          justify-content: center;
+        }
 
         .btn {
           padding: 10px 40px;
@@ -296,6 +341,9 @@ img {
           font-weight: 600;
           font-family: "Work sans", sans-serif;
           text-transform: uppercase;
+          @include device(smartphone) {
+            padding: 10px 20px;
+          }
         }
         .demo {
           background: $color-primary;
