@@ -444,9 +444,18 @@ img {
   display: none;
 }
 
+.header .menu #btn-mobile div {
+  width: 32px;
+  height: 3px;
+  background-color: #fafafa;
+  margin: 8px;
+  transition: 0.4s;
+}
+
 @media screen and (max-width: 767px) {
   .header .menu #btn-mobile {
-    display: flex;
+    display: block;
+    cursor: pointer;
   }
 }
 
@@ -479,6 +488,18 @@ img {
   color: #ebebeb;
 }
 
+.header .menu.active .line-1 {
+  transform: rotate(-45deg) translate(-10px, 8px);
+}
+
+.header .menu.active .line-2 {
+  opacity: 0;
+}
+
+.header .menu.active .line-3 {
+  transform: rotate(45deg) translate(-7px, -5px);
+}
+
 .header .contatos {
   display: flex;
   flex-wrap: wrap;
@@ -509,6 +530,7 @@ img {
 @media screen and (max-width: 767px) {
   .menu.active .menu-lista {
     display: block;
+    animation: show-down 0.5s forwards;
   }
   .menu-lista li a {
     padding: 1rem 0;
@@ -519,6 +541,17 @@ img {
   }
   .menu-lista li:first-child {
     margin-top: 40px;
+  }
+}
+
+@keyframes show-down {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -812,6 +845,7 @@ img {
 }
 
 .contatos-bg .cards-contato .card-cont {
+  border-bottom: 3px solid #5683f6;
   display: flex;
   justify-content: center;
   align-items: center;

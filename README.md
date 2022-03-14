@@ -1,9 +1,6 @@
 <h1 align="center">
   Guilherme Xavier | Portfólio
 </h1>
-<h1 align="center">
-  
-</h1>
 
 ---
 

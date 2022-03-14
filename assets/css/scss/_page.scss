@@ -58,10 +58,19 @@ img {
   .menu {
     #btn-mobile {
       display: none;
+      div {
+        width: 32px;
+        height: 3px;
+        background-color: #fafafa;
+        margin: 8px;
+        transition: 0.4s;
+      }
       @include device(smartphone) {
-        display: flex;
+        display: block;
+        cursor: pointer;
       }
     }
+
     .menu-lista {
       display: flex;
       flex-wrap: wrap;
@@ -86,6 +95,16 @@ img {
       font-weight: 700;
       color: #ebebeb;
     }
+  }
+
+  .menu.active .line-1 {
+    transform: rotate(-45deg) translate(-10px, 8px);
+  }
+  .menu.active .line-2 {
+    opacity: 0;
+  }
+  .menu.active .line-3 {
+    transform: rotate(45deg) translate(-7px, -5px);
   }
 
   .contatos {
@@ -114,7 +133,8 @@ img {
 
 @include device(smartphone) {
   .menu.active .menu-lista {
-    display: block; // certo
+    display: block;
+    animation: show-down 0.5s forwards;
   }
   .menu-lista li a {
     padding: 1rem 0;
@@ -125,6 +145,18 @@ img {
 
   .menu-lista li:first-child {
     margin-top: 40px;
+  }
+}
+
+@keyframes show-down {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -372,6 +404,7 @@ img {
       grid-template-columns: 220px 220px;
     }
     .card-cont {
+      border-bottom: 3px solid $color-primary;
       display: flex;
       justify-content: center;
       align-items: center;
