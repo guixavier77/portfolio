@@ -2,6 +2,13 @@
   Guilherme Xavier | Portfólio
 </h1>
 
+<h1 align="center">
+  <img src="assets/img/readme/page-desktop.png">
+</h1>
+
+<h1 align="center">
+  <img src="assets/img/readme/page-mobile.png">
+</h1>
 ---
 
 ## 🚀 Tecnologias utilizadas
