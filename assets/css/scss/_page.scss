@@ -66,8 +66,8 @@ img {
   font-family: "Work Sans", sans-serif;
   font-weight: 300;
   padding: 20px 0;
+  
   @include type-font(18);
-
   @include device(smartphone) {
     padding-right: 8px;
     padding-left: 8px;
@@ -103,8 +103,8 @@ img {
         top: 83px;
         right: 0;
         background: #282833;
-        height: 100vh;
         z-index: 1000;
+        padding-bottom: 20px;
       }
     }
 
@@ -243,14 +243,19 @@ img {
         padding: 10px 16px;
       }
       @include type-font(18);
-      .download-icon {
+      i {
         display: inline-block;
-        background: url(../img/icons/download-icon.svg) no-repeat center;
         height: 15px;
         width: 24px;
-        padding-right: 10px;
+        padding-right: 15px;
+      }
+      &:hover{
+        border:1px solid $color-terciary;
+        color: $color-terciary;
+        transition: all 1.5s ease-out;
       }
     }
+    
   }
   .foto-principal {
     display: flex;
@@ -285,6 +290,7 @@ img {
         height: 330px;
         padding: 30px 20px;
         background: #3f3f50;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
         border-radius: 4px;
         h3 {
@@ -293,6 +299,7 @@ img {
           color: #ebebeb;
           @include type-font(24);
           padding: 20px 0 12px 0;
+          text-transform: uppercase;
         }
 
         p {
@@ -335,6 +342,7 @@ img {
       align-items: center;
       cursor: pointer;
       border-radius: 4px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
   }
 }
@@ -356,10 +364,12 @@ img {
       border-radius: 8px;
       padding: 30px 45px;
       width: 500px;
-      height: 460px;
+      height: 482px;
       background: #282833;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       @include device(smartphone) {
         width: 349px;
+        height: 425px;
       }
 
       h3 {
@@ -376,13 +386,13 @@ img {
         @include type-font(18);
         color: #d1d1db;
         padding-bottom: 20px;
+        height: 110px;
+       
       }
       .btns {
         display: flex;
         gap: 25px;
-        @include device(smartphone) {
-          justify-content: center;
-        }
+        
 
         .btn {
           padding: 10px 40px;
@@ -396,11 +406,24 @@ img {
         }
         .demo {
           background: $color-primary;
+          border: 1px solid $color-primary;
           color: #0e091b;
+          &:hover{
+            background: none;
+            color: #fff;
+            border: 1px solid $color-primary;
+            transition: all .5s ease-out;
+          }
         }
         .git {
           border: 1px solid $color-primary;
           color: #fff;
+          &:hover{
+            color: #0e091b;
+            background: $color-primary;
+            
+            transition: all 1s ease-out;
+          }
         }
       }
     }
@@ -432,6 +455,7 @@ img {
       width: 220px;
       height: 166px;
       border-radius: 4px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       img {
         width: 32px;
         height: 32px;

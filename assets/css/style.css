@@ -492,8 +492,8 @@ img {
     top: 83px;
     right: 0;
     background: #282833;
-    height: 100vh;
     z-index: 1000;
+    padding-bottom: 20px;
   }
 }
 
@@ -657,12 +657,17 @@ img {
   }
 }
 
-.introducao .apresentacao .btn-download .download-icon {
+.introducao .apresentacao .btn-download i {
   display: inline-block;
-  background: url(../img/icons/download-icon.svg) no-repeat center;
   height: 15px;
   width: 24px;
-  padding-right: 10px;
+  padding-right: 15px;
+}
+
+.introducao .apresentacao .btn-download:hover {
+  border: 1px solid #ebebeb;
+  color: #ebebeb;
+  transition: all 1.5s ease-out;
 }
 
 .introducao .foto-principal {
@@ -701,6 +706,7 @@ img {
   height: 330px;
   padding: 30px 20px;
   background: #3f3f50;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 4px;
 }
 
@@ -711,6 +717,7 @@ img {
   font-size: 1.5em;
   line-height: 1.25em;
   padding: 20px 0 12px 0;
+  text-transform: uppercase;
 }
 
 .skills-bg .skills .cards-skills .card p {
@@ -756,6 +763,7 @@ img {
   align-items: center;
   cursor: pointer;
   border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .projetos {
@@ -776,13 +784,15 @@ img {
   border-radius: 8px;
   padding: 30px 45px;
   width: 500px;
-  height: 460px;
+  height: 482px;
   background: #282833;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 @media screen and (max-width: 767px) {
   .projetos .cards-projetos .card-proj {
     width: 349px;
+    height: 425px;
   }
 }
 
@@ -801,17 +811,12 @@ img {
   line-height: 1.66667em;
   color: #d1d1db;
   padding-bottom: 20px;
+  height: 110px;
 }
 
 .projetos .cards-projetos .card-proj .btns {
   display: flex;
   gap: 25px;
-}
-
-@media screen and (max-width: 767px) {
-  .projetos .cards-projetos .card-proj .btns {
-    justify-content: center;
-  }
 }
 
 .projetos .cards-projetos .card-proj .btns .btn {
@@ -830,12 +835,26 @@ img {
 
 .projetos .cards-projetos .card-proj .btns .demo {
   background: #5683f6;
+  border: 1px solid #5683f6;
   color: #0e091b;
+}
+
+.projetos .cards-projetos .card-proj .btns .demo:hover {
+  background: none;
+  color: #fff;
+  border: 1px solid #5683f6;
+  transition: all .5s ease-out;
 }
 
 .projetos .cards-projetos .card-proj .btns .git {
   border: 1px solid #5683f6;
   color: #fff;
+}
+
+.projetos .cards-projetos .card-proj .btns .git:hover {
+  color: #0e091b;
+  background: #5683f6;
+  transition: all 1s ease-out;
 }
 
 .contatos-bg {
@@ -870,6 +889,7 @@ img {
   width: 220px;
   height: 166px;
   border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .contatos-bg .cards-contato .card-cont img {
