@@ -139,6 +139,10 @@ img {
       img {
         width: 24px;
         height: 24px;
+        &:hover{
+          transform: scale(1.3);
+          transition: ease-in-out .5s;
+        }
       }
     }
     @include device(smartphone) {
@@ -505,16 +509,11 @@ img {
 
 [data-anime]{
   opacity: 0;
-  transition: .6s;
+  transition: ease-in-out .6s;
 }
 
-[data-anime="anime-left"]{
-  transform: translate3d(-50px, 0 , 0);
-}
 
-[data-anime="anime-right"]{
-  transform: translate3d(50px, 0 , 0);
-}
+
 
 [data-anime="anime-top"]{
   transform: translate3d(0,-50px,0);
@@ -525,14 +524,3 @@ img {
   transform: translate3d(0,0,0);
 }
 
-
-
-[data-mousemove]{
-  opacity: 1;
-  transition: ease-in-out .3s;
-}
-
-[data-mousemove].animate{
-  opacity: 1;
-  transform: scale(1.3);
-}
