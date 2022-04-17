@@ -1,8 +1,9 @@
 import initMenuMobile from "./modules/menu-mobile.js";
 import initScrollToSection from "./modules/scroll-to-section.js"
-import initAnimeScroll from "./modules/anime-scroll.js";
-
+import initScrollReveal from "./modules/scroll-reveal.js";
+import initBackToTop from "./modules/BackToTop.js";
 
 initMenuMobile();
 initScrollToSection();
-initAnimeScroll();
+initScrollReveal();
+initBackToTop();
