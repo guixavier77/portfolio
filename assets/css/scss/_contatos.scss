@@ -1,0 +1,43 @@
+.contatos-bg {
+  background: #282833;
+  padding-top: 60px;
+  .cards-contato {
+    display: flex;
+    justify-content: center;
+    padding: 60px 0;
+    gap: 40px;
+    flex-wrap: wrap;
+    @include device(tablet) {
+      display: grid;
+      grid-template-columns: 220px 220px;
+    }
+    .card-cont {
+      border-bottom: 3px solid $color-primary;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: #3f3f50;
+      padding: 30px;
+      font-family: "Work Sans", sans-serif;
+      width: 220px;
+      height: 166px;
+      border-radius: 4px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      img {
+        width: 32px;
+        height: 32px;
+      }
+      h3 {
+        color: #ebebeb;
+        padding: 12px 0;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+      p {
+        font-size: 0.875em;
+        color: #d1d1db;
+      }
+    }
+  }
+}
