@@ -1,7 +1,6 @@
 export default function initScrollReveal(){
   window.sr = ScrollReveal({
     origin: "top",
-    reset: true,
     distance: "50px",
     duration: 2000,
 

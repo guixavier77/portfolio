@@ -1,0 +1,76 @@
+.skills-bg {
+  background: #282833;
+  .skills {
+    padding: 60px 0;
+    .cards-skills {
+      padding-top: 60px;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      .card {
+        width: 330px;
+        height: 330px;
+        padding: 30px 20px;
+        background: #3f3f50;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border-radius: 4px;
+        h3 {
+          font-family: Montserrat;
+          font-weight: 600;
+          color: #ebebeb;
+          @include type-font(24);
+          padding: 20px 0 12px 0;
+          text-transform: uppercase;
+        }
+
+        p {
+          font-family: "Work Sans", sans-serif;
+          @include type-font(18);
+          color: #d1d1db;
+        }
+
+        .circle {
+          background: #353543;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+    
+  }
+
+  .card-tecnologias {
+    padding-top: 40px;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+    @include device(tablet) {
+      display: grid;
+      grid-template-columns: 100px 100px 100px;
+      gap: 30px;
+      justify-items: center;
+    }
+    .card-tec {
+      background: #3f3f50;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border-radius: 4px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      
+    }
+  }
+}
+
+[data-anime]{
+  visibility: hidden;
+}

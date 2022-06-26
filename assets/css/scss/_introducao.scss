@@ -1,0 +1,95 @@
+.introducao {
+  display: grid;
+  grid-template-areas: "apresentacao foto-principal";
+  grid-template-columns: 1fr 1.5fr;
+  padding-bottom: 60px;
+  @include device(smartphone) {
+    grid-template-areas:
+      "apresentacao"
+      "foto-principal";
+    grid-template-columns: 1fr;
+  }
+  .apresentacao {
+    grid-area: apresentacao;
+    h2 {
+      @include type-font(36);
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      color: #9b9bb1;
+      padding-top: 80px;
+      @include device(desktop) {
+        @include type-font(48);
+      }
+
+      @include device(smartphone) {
+        padding-top: 22px;
+      }
+    }
+
+    h1 {
+      font-family: "Montserrat", sans-serif;
+      @include type-font(48);
+      font-weight: 700;
+      color: #fff;
+      padding: 20px 0 24px 0;
+      &::after {
+        content: "";
+        display: block;
+        width: 200px;
+        border: 2px solid $color-primary;
+        margin-top: 10px;
+      }
+      @include device($desktop) {
+        @include type-font(72);
+      }
+    }
+
+    p.descricao {
+      @include type-font(18);
+      color: #d1d1db;
+      font-family: "Work Sans", sans-serif;
+      font-weight: 400;
+      padding-bottom: 55px;
+      @include device(tablet) {
+        font-size: 16px;
+      }
+    }
+    .btn-download {
+      border: 1px solid $color-primary;
+      border-radius: 100px;
+      padding: 20px 32px;
+      color: $color-primary;
+      font-family: "Ubuntu", sans-serif;
+      @include device(tablet) {
+        padding: 10px 16px;
+      }
+      @include type-font(18);
+      i {
+        display: inline-block;
+        height: 15px;
+        width: 24px;
+        padding-right: 15px;
+      }
+      &:hover{
+        border:1px solid $color-terciary;
+        color: $color-terciary;
+        transition: all 1.5s ease-out;
+      }
+    }
+    
+  }
+  .foto-principal {
+    display: flex;
+    grid-area: foto-principal;
+    padding-top: 40px;
+    justify-content: flex-end;
+
+    img {
+      @include device(tablet) {
+        width: 400px;
+        height: 400px;
+        padding-top: 30px;
+      }
+    }
+  }
+}

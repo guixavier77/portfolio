@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Ubuntu&family=Work+Sans:wght@300;600;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+
+  
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #0e091b;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $color-primary;
+  border-radius: 8px;
+}
+body {
+  background: #353543;
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+.container {
+  max-width: $desktop;
+  margin: 0 auto;
+  @include device(tablet) {
+    max-width: $tablet;
+  }
+  @include device(smartphone) {
+    max-width: $smartphone;
+    padding: 0 8px;
+  }
+}
+
+.secao-titulo {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  @include type-font(48);
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  &::after {
+    content: "";
+    display: block;
+    width: 160px;
+    height: 3px;
+    margin: 10px auto 10px auto;
+    background: $color-primary;
+  }
+}
+
+// animações
+
+
+
+
+#progress{
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  height: 60px;
+  width: 60px;
+  display: none;
+  place-items: center;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 2000;
+}
+
+#progress-value{
+  display: block;
+  height: calc(100% - 15px);
+  width: calc(100% - 15px);
+  background: $color-secondary;
+  border-radius: 50%;
+  display:grid;
+  place-items: center;
+  font-size: 24px;
+  color: $color-primary;
+}
